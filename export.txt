@@ -1,0 +1,30 @@
+=== NodeVault Data Export ===
+Export Date: 11/25/2025, 2:43:11 PM
+Total Records: 4
+File: export.txt
+=============================
+
+Record 1:
+  ID: 1763890940388
+  Name: ayesha
+  Value: 12
+  Created: 11/23/2025, 9:42:20 AM
+-----------------------------
+Record 2:
+  ID: 1763890962041
+  Name: ibrahim
+  Value: 10
+  Created: 11/23/2025, 9:42:42 AM
+-----------------------------
+Record 3:
+  ID: 1763890971396
+  Name: afia
+  Value: 16
+  Created: 11/23/2025, 9:42:51 AM
+-----------------------------
+Record 4:
+  ID: 1764079292467
+  Name: abc
+  Value: 34
+  Created: 11/25/2025, 2:01:32 PM
+-----------------------------

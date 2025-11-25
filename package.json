@@ -1,0 +1,17 @@
+{
+  "name": "scdproject25",
+  "version": "1.0.0",
+  "description": "NodeVault application with CRUD operations",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.17.1",
+    "dotenv": "^16.0.3"
+  }
+}

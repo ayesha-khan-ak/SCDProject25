@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: scd-vault-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: vaultdb
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - scd-vault-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  backend:
+    build: .
+    container_name: scd-vault-backend
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      MONGO_URI: "mongodb://scd-vault-mongodb:27017/vaultdb"
+      NODE_ENV: production
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backups:/app/backups
+      - ./data:/app/data
+    networks:
+      - scd-vault-network
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  scd-vault-network:
+    driver: bridge
